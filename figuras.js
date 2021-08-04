@@ -114,6 +114,28 @@ function calcularAreaCirculo(){
     alert(area);
 }
 
+//Calcula la altura de un triangulo Isósceles.
+function alturaTrianguloIscoceles(lado1, lado2, base){
+        return Math.sqrt((lado1*lado2)-((base*base)/4));
+}
+
+function calcularAlturaIscoceles(){
+    const input = document.getElementById("InputTrianguloIscoceles");
+    const value = parseInt(input.value);
+    const input2 = document.getElementById("InputTrianguloIscoceles2");
+    const value2 = parseInt(input2.value);
+    const input3 = document.getElementById("InputTrianguloIscoceles3");
+    const value3 = parseInt(input3.value);
+    if(value==value2 && value!=value3 && value2!=value3){
+        const altura = alturaTrianguloIscoceles(value, value2, value3);
+        alert("El calculo de la altura es: "+ altura);
+    }else{
+        alert("Los lados A y B no son iguales, no es un triangulo Iscoceles");
+    }
+
+}
+
+
 
 // function areaCirculo(radio){
 //     return PI*(radio*radio);
