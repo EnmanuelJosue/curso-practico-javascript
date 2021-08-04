@@ -90,7 +90,6 @@ function calcularPerimetroTriangulo(){
     const perimetro = perimetroTriangulo(value, value2, value3);
     alert(perimetro);
 }
-
 function calcularAreaTriangulo(){
     const input3 = document.getElementById("InputTriangulo3");
     const value3 = parseInt(input3.value);
@@ -101,4 +100,21 @@ function calcularAreaTriangulo(){
     alert(area);
 }
 
+function calcularPerimetroCirculo(){
+    const input = document.getElementById("InputCirculo");
+    const value = parseInt(input.value);
+    const perimetro = perimetroCirculo(value);
+    alert(perimetro);
+}
 
+function calcularAreaCirculo(){
+    const input = document.getElementById("InputCirculo");
+    const value = parseInt(input.value);
+    const area = areaCirculo(value);
+    alert(area);
+}
+
+
+// function areaCirculo(radio){
+//     return PI*(radio*radio);
+// }
