@@ -17,12 +17,26 @@
         <h2>Calcula el precio a pagar de tus productos con descuento</h2>
     </section> 
     <form action="">
-        <label for="InputPrice"> Escribe el precio de tu producto</label>
-        <input id="InputPrice" type="number"> 
+        <label for="InputPrice"> 
+            <p>Escribe el precio de tu producto</p>
+        </label>
+        <input id="InputPrice" type="number">         
         
-        
-        <label for="InputDiscount"> Escribe el descuento de tu producto</label>
+        <label for="InputDiscount"> 
+            <p>Escribe el descuento de tu producto</p>
+        </label>
         <input id="InputDiscount" type="number">
+
+        <label for="InputCupon">
+             <p>Si tienes un cupón de descuento, seleccionalo aquí</p>
+             <select name="Cupons" id="InputCupon">
+                 <option value="0">No tengo</option>
+                 <option value="10">Descuento del 10%</option>
+                 <option value="25">Descuento del 25%</option>
+                 <option value="50">Descuento del 50%</option>
+             </select>
+        </label>
+        <br>
         <button type="button" onclick="onClickButtonPriceDiscount()">
             Calcular el precio con descuento
         </button>
