@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de la mediana para los ingresos no fijos</title>
+</head>
+<body>
+    <header>
+        <h1>Calcularemos la mediana de tus ingresos no fijos</h1>
+    </header>   
+    <section class="container">
+        <form class="container-form">
+            <label for="InputTipoIngreso"> 
+                <p>Escribe el tipo de Ingreso No Fijo que obtuviste</p>
+            </label>
+            <input id="InputTipoIngreso" type="text" placeholder="Tipo de ingreso no fijo">         
+            
+            <label for="InputMontoIngreso"> 
+                <p>Escribe el monto de tu ingreso no fijo</p>
+            </label>
+            <input id="InputMontoIngreso" type="number" placeholder="Monto del ingreso no fijo">
+            <br>
+            <button type="button" onclick="onClickButtonPriceDiscount()">
+                Enviar datos
+            </button>
+            <button type="button" onclick="onClickCalcularMediana()">
+                Calcular la mediana de tus ingresos no fijos
+            </button>
+            <p id="ResultP"></p>        
+        </form> 
+    </section> 
+    <script src="./ingresosnofijos.js"></script>
+</body>
+</html>
