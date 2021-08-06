@@ -38,6 +38,13 @@ function calcularModa(lista1){
             return elementoA[1] - elementoB[1];
         }
     );
-    const moda = lista1Array[lista1Array.length -1];
-    return moda;
+    if(lista1Array[lista1Array.length -1][1]==lista1Array[lista1Array.length -2][1]){
+        let moda = "Las modas son: "+ lista1Array[lista1Array.length -1] +" y "+ lista1Array[lista1Array.length -2];
+        return moda;
+        console.log("soniguales");
+    }else{
+        const moda = lista1Array[lista1Array.length -1];
+        return moda;
+    }
+    
 }
