@@ -13,6 +13,7 @@ function onClickButtonPriceDiscount(){
     console.log(TipoIngresoValue);
     console.log(MontoIngresoValue);
     console.log(ingresoNoFijo);
+  
 }
 function onClickCalcularMediana(){
     const salariosCol = ingresoNoFijo.map(
@@ -27,8 +28,21 @@ function onClickCalcularMediana(){
     );
     const medianaGeneralCol = medianaSalarios(salariosColSorted);
     console.log("La mediana es"+ medianaGeneralCol);
+
     const promedio = calcularMediaArimetica(salariosCol);
-    console.log("La media aritmetica o promedio de tus ingresos es:"+promedio )
+    console.log("La media aritmetica o promedio de tus ingresos es:"+promedio);
+
+    const moda = calcularModa(salariosColSorted);
+    console.log("La moda de los ingresos no fijos es: "+moda);
+    const resultP = document.getElementById("ResultP");
+    resultP.innerText = "La mediana de tus Ingresos es: " +medianaGeneralCol+
+                        "\n"+
+                        "La media Arimetica o promedio de tus ingresos es: " +promedio+
+                        "\n"+
+                        "La moda de los ingresos no fijos es: " +moda +
+                        "\n"+
+                        "Primer dato"; 
+
 }
 function esPar(numerito) {
     return (numerito % 2 === 0);
@@ -55,5 +69,37 @@ function medianaSalarios(lista) {
         const personitaMitad = lista[mitad];
         return personitaMitad;
     }
+}
+function calcularModa(lista1){
+    const lista1Count = {}; // El objeto agrupara el array de menor a mayor los elementos.
+    lista1.map( // El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos
+        function(elemento){
+            if(lista1Count[elemento]){
+                lista1Count[elemento] += + 1;
+            }else {
+                lista1Count[elemento] = 1;
+            }            
+        }
+    );
+    const lista1Array = Object.entries(lista1Count).sort(
+        function(elementoA, elementoB){
+            return elementoA[1] - elementoB[1];
+        }
+    );
+    console.log(lista1Array);
+    if(lista1Array[lista1Array.length -1][1] != 1 && lista1Array[lista1Array.length -2] != undefined){
+        if(lista1Array[lista1Array.length -1][1] == lista1Array[lista1Array.length -2][1]){
+            const moda = "Las modas son: "+ lista1Array[lista1Array.length -1] +" y "+ lista1Array[lista1Array.length -2];
+            return moda;
+        }else{
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            return moda;
+        }
+    }else if(lista1Array[lista1Array.length -1][1] != 1 ){
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            return moda;
+    }else{
+            return "no hay moda";
+    }  
 }
 

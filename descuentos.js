@@ -29,34 +29,34 @@ function onClickButtonPriceDiscount(){
     
     const inputDiscount = document.getElementById("InputDiscount");
     const discountValue = parseInt(inputDiscount.value);
-    if(Number.isNaN(discountValue)){
-        console.log("Soy Nan");
-    }else{
-        console.log("No soy nan");
-    }
-
+    // if(Number.isNaN(discountValue)){
+    //     console.log("Soy Nan");
+    // }else{
+    //     console.log("No soy nan");
+    // }
     const InputCupon = document.getElementById("InputCupon");
     const cuponValue = InputCupon.value;
+    console.log(cuponValue);
     const value = coupons.find((element) => element.name === cuponValue); // funcion find para buscar en array
-    if(!value){
-        alert("El cupon de descuento no es valido: " + cuponValue);
+    if(Number.isNaN(discountValue)&&!value){
+        console.log(typeof cuponValue);
+        const discountValue = 0;
         const cuponDescuento = 0;
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "El precio con descuento son: $" + precioConDescuento;
+        resultP.innerText = "No tienes ningún descuento, no se introdujo ningún dato para hacer el descuento \n el precio sigue siendo " + precioConDescuento;
+        
     }
-    else if(Number.isNaN(discountValue)){ // Number.isNaN(discountValue) para saber cuando es Not a Number (NaN)
-        console.log(typeof cuponValue);
-        const discountValue = 0;
-        const cuponDescuento = parseInt(value.discount);
+    else if(!value){ // Number.isNaN(discountValue) para saber cuando es Not a Number (NaN)  
+        const cuponDescuento = 0;
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "El precio con descuento son: $" + precioConDescuento;
+        resultP.innerText = "El precio con descuento son: $" + precioConDescuento + " Y no tienes cupon de descuento.";
     }else{
         const cuponDescuento = parseInt(value.discount);
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "El precio con descuento son: $" + precioConDescuento;   
+        resultP.innerText = "El precio con descuento son: $" + precioConDescuento + "\n El descuento de tu producto es: %" + discountValue + "\n Tu cúpon de descuento fue: %"+ cuponDescuento;   
     }
 }
 

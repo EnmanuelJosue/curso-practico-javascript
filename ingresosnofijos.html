@@ -5,32 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculo de la mediana para los ingresos no fijos</title>
+    <link rel="stylesheet" href="./estilos/ingresosnofijos.css">
 </head>
 <body>
     <header>
-        <h1>Calcularemos la mediana de tus ingresos no fijos</h1>
+        <h1>Calculadora de mediana, media arimetica y moda </h1>
+        <p>Para tus ingresos</p>
     </header>   
     <section class="container">
         <form class="container-form">
             <label for="InputTipoIngreso"> 
-                <p>Escribe el tipo de Ingreso No Fijo que obtuviste</p>
+                <p>Escribe el tipo de Ingreso</p>
             </label>
-            <input id="InputTipoIngreso" type="text" placeholder="Tipo de ingreso no fijo">         
+            <input id="InputTipoIngreso" type="text" placeholder="Ejemplo: Venta de Respuestos">         
             
             <label for="InputMontoIngreso"> 
-                <p>Escribe el monto de tu ingreso no fijo</p>
+                <p>Escribe el monto de tu Ingreso</p>
             </label>
-            <input id="InputMontoIngreso" type="number" placeholder="Monto del ingreso no fijo">
+            <input id="InputMontoIngreso" type="number" placeholder="Ejemplo: 200">
             <br>
             <button type="button" onclick="onClickButtonPriceDiscount()">
                 Enviar datos
             </button>
             <button type="button" onclick="onClickCalcularMediana()">
-                Calcular la mediana de tus ingresos no fijos
-            </button>
-            <p id="ResultP"></p>        
+                Hacer Calculos
+            </button>        
         </form> 
     </section> 
+    <div>
+        <p id="ResultP"></p>
+    </div>
     <script src="./ingresosnofijos.js"></script>
 </body>
 </html>
