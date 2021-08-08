@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./estilos/styles.css">
+    <link rel="stylesheet" href="./estilos/figuras.css">
     <title>Figuras geométricas | Curso práctico de JavaScript</title>
 </head>
 <body>
@@ -15,104 +15,89 @@
         <p>Este es el primer taller del curso practico en JavaScript</p>
 
     </header>
-    <section class="container">
-        <section class="container-cuadrado">
+    <section class="container">         
+        <form class="container__form">
             <h2>Calcula el área y el perímetro de un cuadrado</h2>
-            <div class="container-cuadrado__div">
-                <img class="container-cuadrado__div--img" src="https://lh3.googleusercontent.com/proxy/LXGjMa-LYPfrGnCwnpnI8nqq_KHtZPstXOM-NilwocumgElzn-A567DdRbUorwphyECPPUIeu24lgis7ERZBI-ZSw-RvLIMSk3qd4vLyz73d3HiS" alt="cuadrado">
-            </div>            
-            <form action="">
-                <label for="InputCuadrado">
-                    <p>Escribe cuanto mide cada lado de tu cuadrado</p>
-                </label>
-                <input id="InputCuadrado" type="number">
-                <div class="container-cuadrado__button">
-                    <button type="button" onclick="calcularPerimetroCuadrado()">
-                        Calcula el perímetro del cuadrado
-                    </button>
-                    <button type="button" onclick="calcularAreaCuadrado()">
-                        Calcula el área del cuadrado
-                    </button>
-                </div>
-            </form>
-        </section>
-        <section class="container-cuadrado">    
+            
+            <img class="container-cuadrado__div--img" src="./Imagenes/cuadrado.png" alt="cuadrado">
+               
+            <p class="result" id="container__formo"></p>
+            <label for="InputCuadrado">
+                <p>Escribe cuanto mide cada lado de tu cuadrado</p>
+            </label>
+            <input id="InputCuadrado" type="number">
+            <button type="button" onclick="calcularPerimetroCuadrado()">
+                Calcula el perímetro del cuadrado
+            </button>
+            <button type="button" onclick="calcularAreaCuadrado()">
+                Calcula el área del cuadrado
+            </button>
+        </form>    
+        <form class="container__form">
             <h2>Calcula el área y el perímetro de un Triangulo</h2>
             <div class="container-cuadrado__div">
                 <img class="container-cuadrado__div--img" src="./Imagenes/triangulo.png" alt="cuadrado">
             </div>
-            <form action="">
-                <label for="InputTriangulo">
-                   <p>Escribe cuanto mide el lado A de tu Triangulo</p> 
-                </label>
-                <input id="InputTriangulo" type="number">
-                <label for="InputTriangulo2">
-                    <p>Escribe cuanto mide el lado B de tu Triangulo</p>
-                </label>
-                <input id="InputTriangulo2" type="number">
-                <label for="InputTriangulo3">
-                    <p>Escribe cuanto mide la base de tu Triangulo</p>   
-                </label>
-                <input id="InputTriangulo3" type="number">
-                <label for="InputTriangulo4">
-                    <p>Escribe cuanto mide la Altura de tu Triangulo</p>  
-                </label>
-                <input id="InputTriangulo4" type="number">
-                <div class="container-cuadrado__button">
-                    <button type="button" onclick="calcularPerimetroTriangulo()">
-                        el perímetro del Triangulo
-                    </button>
-                    <button type="button" onclick="calcularAreaTriangulo()">
-                        Calcula el área del Triangulo
-                    </button>
-                </div>
-            </form>
-        </section>
-        <section class="container-cuadrado">
+            <label for="InputTriangulo">
+                <p>Escribe cuanto mide el lado A de tu Triangulo</p> 
+            </label>
+            <input id="InputTriangulo" type="number">
+            <label for="InputTriangulo2">
+                <p>Escribe cuanto mide el lado B de tu Triangulo</p>
+            </label>
+            <input id="InputTriangulo2" type="number">
+            <label for="InputTriangulo3">
+                <p>Escribe cuanto mide la base de tu Triangulo</p>   
+            </label>
+            <input id="InputTriangulo3" type="number">
+            <label for="InputTriangulo4">
+                <p>Escribe cuanto mide la Altura de tu Triangulo</p>  
+            </label>
+            <input id="InputTriangulo4" type="number">
+            <button type="button" onclick="calcularPerimetroTriangulo()">
+                el perímetro del Triangulo
+            </button>
+            <button type="button" onclick="calcularAreaTriangulo()">
+                Calcula el área del Triangulo
+            </button>
+        </form>
+        <form class="container__form">
             <h2>Calcula el área y el perímetro de un Circulo</h2>
             <div class="container-cuadrado__div">
                 <img class="container-cuadrado__div--img" src="./Imagenes/circulo.png" alt="cuadrado">
             </div>
-            <form action="">
-                <label for="InputCirculo">
-                    <p>Escribe cuanto mide el radio de tu Circulo</p>
-                </label>
-                <input id="InputCirculo" type="number">
-                <div class="container-cuadrado__button">
-                    <button type="button" onclick="calcularPerimetroCirculo()">
-                        el perímetro del Circulo
-                    </button>
-                    <button type="button" onclick="calcularAreaCirculo()">
-                        Calcula el área del Circulo
-                    </button>
-                </div>
-            </form>
-        </section>
-        <section class="container-cuadrado">
+            <label for="InputCirculo">
+                <p>Escribe cuanto mide el radio de tu Circulo</p>
+            </label>
+            <input id="InputCirculo" type="number">
+            <button type="button" onclick="calcularPerimetroCirculo()">
+                el perímetro del Circulo
+            </button>
+            <button type="button" onclick="calcularAreaCirculo()">
+                Calcula el área del Circulo
+            </button>
+        </form>
+        <form class="container__form">
             <h2>Calcula la altura de un triangulo Isósceles </h2>
             <div class="container-cuadrado__div">
-                <img class="container-cuadrado__div--img" src="./Imagenes/circulo.png" alt="cuadrado">
+                <img class="container-cuadrado__div--img" src="./Imagenes/iscoceles.png" alt="cuadrado">
             </div>
-            <form action="">
-                <label for="InputTrianguloIscoceles">
-                    <p>Escribe cuanto mide el lado A de tu Triangulo</p>
-                </label>
-                <input id="InputTrianguloIscoceles" type="number">
-                <label for="InputTrianguloIscoceles2">
-                    <p>Escribe cuanto mide el lado B de tu Triangulo</p> 
-                </label>
-                <input id="InputTrianguloIscoceles2" type="number">
-                <label for="InputTrianguloIscoceles3">
-                    <p>Escribe cuanto mide el lado C de tu Triangulo</p>
-                </label>
-                <input id="InputTrianguloIscoceles3" type="number">
-                <div class="container-cuadrado__button">
-                    <button type="button" onclick="calcularAlturaIscoceles()">
-                        Calcula la altura del triangulo Isósceles
-                    </button>
-                </div>
-            </form>
-        </section>
+            <label for="InputTrianguloIscoceles">
+                <p>Escribe cuanto mide el lado A de tu Triangulo</p>
+            </label>
+            <input id="InputTrianguloIscoceles" type="number">
+            <label for="InputTrianguloIscoceles2">
+                <p>Escribe cuanto mide el lado B de tu Triangulo</p> 
+            </label>
+            <input id="InputTrianguloIscoceles2" type="number">
+            <label for="InputTrianguloIscoceles3">
+                <p>Escribe cuanto mide el lado C de tu Triangulo</p>
+            </label>
+            <input id="InputTrianguloIscoceles3" type="number">
+            <button type="button" onclick="calcularAlturaIscoceles()">
+                Calcula la altura del triangulo Isósceles
+            </button>
+        </form>
     </section>    
     <script src="./figuras.js"></script>
 </body>
