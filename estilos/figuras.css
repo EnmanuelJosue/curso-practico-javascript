@@ -47,7 +47,7 @@ header h1,p{
     text-align: center;
 }
 .container{
-    background-image: url(/Imagenes/cool-background.png);
+    background-image: url(./cool-background.png);
     background-repeat : no-repeat;
     background-size : cover;
     display: grid;
