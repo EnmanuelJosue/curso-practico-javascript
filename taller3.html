@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de mediana, media arimetica y moda para tus ingresos.</title>
-    <link rel="stylesheet" href="./estilos/ingresosnofijos.css">
+    <title>Hallar promedio, mediana y moda</title>
+    <link rel="stylesheet" href="./estilos/taller3.css">
 </head>
 <body>
     <header class="header">        
@@ -18,21 +18,15 @@
             </div>    
             
         </div>
-        <h1>Calculadora de mediana, media arimetica y moda para tus ingresos. </h1>
-        <p>Este es el taller 4 del curso practico de JavaScript</p>
+        <h1>Calculadora de mediana, media arimetica y moda </h1>    
 
-    </header> 
+    </header>   
     <section class="container">
         <form class="container-form">
-            <label for="InputTipoIngreso"> 
-                <p>Escribe el tipo de Ingreso</p>
-            </label>
-            <input id="InputTipoIngreso" type="text" placeholder="Ejemplo: Venta de Respuestos">         
-            
             <label for="InputMontoIngreso"> 
-                <p>Escribe el monto de tu Ingreso</p>
+                <p>Escribe los datos a calcular</p>
             </label>
-            <input id="InputMontoIngreso" type="number" placeholder="Ejemplo: 200">
+            <input id="InputMontoIngreso" type="number" placeholder="Ejemplo: 100">
             <br>
             <button type="button" onclick="onClickButtonPriceDiscount()">
                 Enviar datos
@@ -42,9 +36,9 @@
             </button>        
         </form> 
     </section> 
-    <div>
+    <div class="div">
         <p id="ResultP"></p>
     </div>
-    <script src="./ingresosnofijos.js"></script>
+    <script src="./taller3.js"></script>
 </body>
 </html>

@@ -44,19 +44,26 @@ function onClickButtonPriceDiscount(){
         const cuponDescuento = 0;
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "No tienes ningún descuento, no se introdujo ningún dato para hacer el descuento \n el precio sigue siendo " + precioConDescuento;
+        resultP.innerText = "\n No tienes ningún descuento, no se introdujo ningún dato para hacer el descuento \n el precio sigue siendo " + precioConDescuento;
         
     }
     else if(!value){ // Number.isNaN(discountValue) para saber cuando es Not a Number (NaN)  
         const cuponDescuento = 0;
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "El precio con descuento son: $" + precioConDescuento + " Y no tienes cupon de descuento.";
-    }else{
+        resultP.innerText = "\n El precio con descuento son: $" + precioConDescuento + " Y no tienes codigos de descuento.";
+    }else if(Number.isNaN(discountValue)){
+        const discountValue = 0;
         const cuponDescuento = parseInt(value.discount);
         const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
         const resultP = document.getElementById("ResultP");
-        resultP.innerText = "El precio con descuento son: $" + precioConDescuento + "\n El descuento de tu producto es: %" + discountValue + "\n Tu cúpon de descuento fue: %"+ cuponDescuento;   
+        resultP.innerText = "\n Aplicaste tu cupon de descuento, el precio con el descuento es: " + precioConDescuento + "\n Tu cupon de descuento es: %"+ cuponDescuento;
+    }
+    else{
+        const cuponDescuento = parseInt(value.discount);
+        const precioConDescuento = calcularPrecioConDescuentro(priceValue, discountValue, cuponDescuento);
+        const resultP = document.getElementById("ResultP");
+        resultP.innerText = "\n El precio con descuento son: $" + precioConDescuento + "\n El descuento de tu producto es: %" + discountValue + "\n Tu cúpon de descuento fue: %"+ cuponDescuento;   
     }
 }
 

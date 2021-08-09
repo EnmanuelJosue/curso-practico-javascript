@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="./estilos/descuentos.css">
 </head>
 <body>
-    <header>
-        <h1>
-            Porcentajes y descuentos
-        </h1>  
-        <p>Este es el segundo taller del curso practico de JavaScript</p>
-        <h2>Calcula el precio a pagar de tus productos con descuento</h2>
+    <header class="header">        
+        <div class="header__nav-links">
+            <div class="header__nav--img">
+                <a href="/index.html"> <img src="./Imagenes/home.png" alt=""> Inicio</a>
+            </div>
+            <div class="header__nav--img">
+                <a href="https://github.com/EnmanuelJosue"> <img src="./Imagenes/github.png" alt="">GitHub</a>
+            </div>    
+            
+        </div>
+        <h1>Porcentajes y descuentos </h1>   
+        <p>Este es el segundo taller del curso practico de JavaScript</p> 
+
     </header>
     <section class="container">
         <form class="container-form">
@@ -28,7 +35,7 @@
             <input id="InputDiscount" type="number">
     
             <label for="InputCupon">
-                 <p>Si tienes un cupón de descuento, escribelo aquí</p>
+                 <p>Si tienes un codigo de descuento, escribelo aquí</p>
             </label>
             <input id="InputCupon" type="text" placeholder="Codigo de descuento">
             <br>
@@ -38,7 +45,7 @@
         </form> 
     </section> 
     <div class="div">
-        <p>Cupones de descuento:</p>
+        <p>Codigos de descuento:</p>
         <ul>
             <li>superDescuento -> 15 %</li>
             <li>megaDescuento -> 30 %</li>
