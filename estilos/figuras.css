@@ -16,13 +16,28 @@ body{
     width: 100vw;
     height: 100vh;
 }
-header{
-    color: white;
-    margin-top: 2rem;
+.header{
+    width: 100%;
+    height: 8rem;
     display: flex;
     flex-direction: column;
 }
-header h1, h2, p{
+.header__nav-links{
+    display: flex;
+    justify-content: space-between;
+    
+    margin: 1rem;
+}
+.header__nav-links a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.header__nav-links a:hover{
+    text-decoration: underline;
+}
+header h1, p{
+    color: white;
     text-align: center;
 }
 .container{
