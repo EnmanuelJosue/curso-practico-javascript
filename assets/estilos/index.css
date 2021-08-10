@@ -93,14 +93,14 @@ header h1{
 }
 @media (max-width:768px){
     .container{
-        margin: 10rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 1rem;
+        width: 50vw;
+        height: 80vh;
+        flex-direction: column;
     }
     .container__div{
         align-items: center;
-        height: 25rem;
-        justify-content: flex-start;
+        height: 25vh;
         margin-top: 3.5rem;
         font-size: 2rem;
     }
@@ -108,6 +108,9 @@ header h1{
     .container__div--div img{
         margin-top: 3rem;
     }
+    .container__div--div a{
+        color: blue;
+    } 
     
 }
 @media (max-width:425px){
@@ -129,19 +132,18 @@ header h1{
     .container{
         margin: 0.1rem;
         width: 250px;
-        height: 100vh;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: space-between;
+        height: 60vh;
     }
     .container__div{
         width: 200px;
         height: 150px;
         padding: 0.1rem;
-        margin: 0.1rem;
-        font-size: 1.6rem;
-        align-items: center;
+        margin: 2rem;
+
     }
+    .container__div--div a{
+        color: blue;
+    } 
 
     .container__div--div img{
         margin: 1rem;
