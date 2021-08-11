@@ -22,11 +22,12 @@
 
     </header>   
     <section class="container">
-        <form class="container-form">
+        <form class="container-form" id="form">
             <label for="InputMontoIngreso"> 
                 <p>Escribe los datos a calcular</p>
             </label>
             <input id="InputMontoIngreso" type="number" placeholder="Ejemplo: 100">
+            <p class="error" id="errorAddValue"></p>
             <br>
             <button type="button" onclick="onClickButtonPriceDiscount()">
                 Enviar datos
@@ -36,6 +37,10 @@
             </button>        
         </form> 
     </section> 
+    <div class="valores" >
+        <h2>Lista de valores cargados</h2>
+        <ul id="mostrarLista"> </ul>
+    </div>
     <div class="div">
         <p id="ResultP"></p>
     </div>

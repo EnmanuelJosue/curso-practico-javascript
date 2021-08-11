@@ -1,13 +1,39 @@
 const ingresoNoFijo = [];
 
+function cleanError (id) { // con el id busco esta etiqueta en el html
+    const errors = document.getElementById(id).querySelectorAll(".error"); //el queryselector busca donde esta la la clase .error
+    for (e of errors) {
+        e.innerHTML = '';
+    }
+}
+
 function onClickButtonPriceDiscount(){
-    
+    cleanError('form');
     const InputMontoIngreso = document.getElementById("InputMontoIngreso");
     const MontoIngresoValue = parseInt(InputMontoIngreso.value);
+
+    InputMontoIngreso.value = '';
+    if(Number.isNaN(MontoIngresoValue) || MontoIngresoValue<0){
+        errorAddValue = document.getElementById("errorAddValue");
+        errorAddValue.innerHTML = "Ingrese un valor válido";
+        return false; // aquí se rompe y no entra a ingresar datos al array
+    }
     ingresoNoFijo.push(MontoIngresoValue);
+    mostrarLista(ingresoNoFijo);
     console.log(MontoIngresoValue);
     console.log(ingresoNoFijo);
   
+}
+function mostrarLista(list){
+    l = document.getElementById("mostrarLista");
+    l.innerHTML = " ";    
+
+    list.forEach((element,index) => {
+        const listElement = document.createElement('li');
+        listElement.innerHTML = index+1 + " - " + element;
+        
+        l.appendChild(listElement);
+    });
 }
 function onClickCalcularMediana(){
     const salariosCol = ingresoNoFijo.map(
@@ -29,11 +55,10 @@ function onClickCalcularMediana(){
     const moda = calcularModa(salariosColSorted);
     console.log("La moda de los ingresos no fijos es: "+moda);
     const resultP = document.getElementById("ResultP");
-    resultP.innerText = "La mediana de tus datos es: " +medianaGeneralCol+
+    resultP.innerText = "La mediana es: " +medianaGeneralCol+
                         "\n"+
-                        "La media Arimetica o promedio de tus datos es: " +promedio+
-                        "\n"+
-                        "La moda es: " +moda; 
+                        "La media Arimetica es: " +promedio+
+                        "\n" +moda; 
 
 }
 function esPar(numerito) {
@@ -46,7 +71,7 @@ function calcularMediaArimetica(lista){
         }
     );
 
-    const promedioLista = sumaLista / lista.length;
+    const promedioLista = parseFloat(sumaLista / lista.length).toFixed(2);
     return promedioLista;
 }
 function medianaSalarios(lista) {
@@ -81,14 +106,14 @@ function calcularModa(lista1){
     console.log(lista1Array);
     if(lista1Array[lista1Array.length -1][1] != 1 && lista1Array[lista1Array.length -2] != undefined){
         if(lista1Array[lista1Array.length -1][1] == lista1Array[lista1Array.length -2][1]){
-            const moda = "Las modas son: "+ lista1Array[lista1Array.length -1] +" y "+ lista1Array[lista1Array.length -2];
+            const moda = "Las modas son: "+ lista1Array[lista1Array.length -1][0] +" y "+ lista1Array[lista1Array.length -2][0];
             return moda;
         }else{
-            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1][0];
             return moda;
         }
     }else if(lista1Array[lista1Array.length -1][1] != 1 ){
-            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1][0];
             return moda;
     }else{
             return "no hay moda";

@@ -21,7 +21,7 @@ function onClickButtonPriceDiscount(){
 
     if(Number.isNaN(MontoIngresoValue) || MontoIngresoValue<0 || TipoIngresoValue === "" ){
         errorAddValue = document.getElementById("errorAddValue");
-        errorAddValue.innerHTML = "Ingrese un valor válido en el valor de tu ingreso";
+        errorAddValue.innerHTML = "Ingresa valores válidos";
         return false; // aquí se rompe y no entra a ingresar datos al array
     }
     ingresoNoFijo.push({
@@ -69,11 +69,8 @@ function onClickCalcularMediana(){
     const resultP = document.getElementById("ResultP");
     resultP.innerText = "La mediana de tus Ingresos es: " +medianaGeneralCol+
                         "\n"+
-                        "La media Arimetica o promedio de tus ingresos es: " +promedio+
-                        "\n"+
-                        "La moda de los ingresos no fijos es: " +moda +
-                        "\n"+
-                        "Primer dato"; 
+                        "La media Arimetica es: " +promedio+
+                        "\n " +moda; 
 
 }
 function esPar(numerito) {
@@ -121,14 +118,14 @@ function calcularModa(lista1){
     console.log(lista1Array);
     if(lista1Array[lista1Array.length -1][1] != 1 && lista1Array[lista1Array.length -2] != undefined){
         if(lista1Array[lista1Array.length -1][1] == lista1Array[lista1Array.length -2][1]){
-            const moda = "Las modas son: "+ lista1Array[lista1Array.length -1] +" y "+ lista1Array[lista1Array.length -2];
+            const moda = "Las modas son: "+ lista1Array[lista1Array.length -1][0] +" y "+ lista1Array[lista1Array.length -2][0];
             return moda;
         }else{
-            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1][0];
             return moda;
         }
     }else if(lista1Array[lista1Array.length -1][1] != 1 ){
-            const moda = "La moda es: "+ lista1Array[lista1Array.length -1];
+            const moda = "La moda es: "+ lista1Array[lista1Array.length -1][0];
             return moda;
     }else{
             return "no hay moda";

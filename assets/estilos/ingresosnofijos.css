@@ -94,15 +94,24 @@ input {
     margin-top: 3%;
     color: white;
     text-align: center;
+    width: 30rem;
+    border-radius: 10px;
+    border: solid 0.2rem;
 }
 .valores{
     color: white;
     margin-top: 2rem;
     width: 25rem;
-    height: 24rem;
     text-align: center;
     font-size: 1.6rem;
+    border-radius: 10px;
+    border: solid 0.2rem;
 }
 .valores, ul{
     list-style: none;
+}
+.error{
+    text-align: center;
+    color:rgb(246, 73, 73);
+    font-size: 1.9rem;
 }
