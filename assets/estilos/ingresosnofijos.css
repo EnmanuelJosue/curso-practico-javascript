@@ -18,7 +18,6 @@ body{
 }
 .header{
     width: 100%;
-    height: 8rem;
     display: flex;
     flex-direction: column;
 }
@@ -43,13 +42,14 @@ body{
     height: 3rem;
 }
 header h1, p{
+    margin-top: 0.5rem;
     color: white;
     text-align: center;
 }
 .container{
     width: 28,2rem;
     height: 26,9rem;
-    margin: 10rem;
+    margin-top: 4%;
     border-radius: 0.9rem;
     border: solid 0.5rem #94bbe9;
     box-shadow: 5px 5px 15px 5px #000000;
@@ -89,4 +89,9 @@ input {
     padding: 0.5rem;
     outline: none;
     font-size: 1.35rem;
+}
+.div{
+    margin-top: 3%;
+    color: white;
+    text-align: center;
 }
