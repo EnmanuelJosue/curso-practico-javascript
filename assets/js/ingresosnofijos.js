@@ -1,20 +1,52 @@
 const ingresoNoFijo = [];
 
+
+function cleanError (id) { // con el id busco esta etiqueta en el html
+    const errors = document.getElementById(id).querySelectorAll(".error"); //el queryselector busca donde esta la la clase .error
+    for (e of errors) {
+        e.innerHTML = '';
+    }
+}
+
 function onClickButtonPriceDiscount(){
+    cleanError('form');
     const InputTipoIngreso = document.getElementById("InputTipoIngreso");
     const TipoIngresoValue = InputTipoIngreso.value;
 
     const InputMontoIngreso = document.getElementById("InputMontoIngreso");
     const MontoIngresoValue = parseInt(InputMontoIngreso.value);
+
+    InputTipoIngreso.value = '';
+    InputMontoIngreso.value = '';
+
+    if(Number.isNaN(MontoIngresoValue) || MontoIngresoValue<0 || TipoIngresoValue === "" ){
+        errorAddValue = document.getElementById("errorAddValue");
+        errorAddValue.innerHTML = "Ingrese un valor válido en el valor de tu ingreso";
+        return false; // aquí se rompe y no entra a ingresar datos al array
+    }
     ingresoNoFijo.push({
         tipo: TipoIngresoValue,
         monto: MontoIngresoValue,
     },)
+    mostrarLista(ingresoNoFijo);
+        
     console.log(TipoIngresoValue);
     console.log(MontoIngresoValue);
     console.log(ingresoNoFijo);
   
 }
+function mostrarLista(list){
+    l = document.getElementById("mostrarLista");
+    l.innerHTML = " ";    
+
+    list.forEach((element,index) => {
+        const listElement = document.createElement('li');
+        listElement.innerHTML = index+1 + " - " + element.tipo + "\n Monto: "+element.monto;
+        
+        l.appendChild(listElement);
+    });
+}
+
 function onClickCalcularMediana(){
     const salariosCol = ingresoNoFijo.map(
         function(personita){

@@ -95,3 +95,14 @@ input {
     color: white;
     text-align: center;
 }
+.valores{
+    color: white;
+    margin-top: 2rem;
+    width: 25rem;
+    height: 24rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.valores, ul{
+    list-style: none;
+}

@@ -23,9 +23,9 @@
 
     </header> 
     <section class="container">
-        <form class="container-form">
+        <form class="container-form" id="form">
             <label for="InputTipoIngreso"> 
-                <p>Escribe el tipo de Ingreso</p>
+                <p>Escribe el nombre de tu Ingreso</p>
             </label>
             <input id="InputTipoIngreso" type="text" placeholder="Ejemplo: Venta de Respuestos">         
             
@@ -33,6 +33,7 @@
                 <p>Escribe el monto de tu Ingreso</p>
             </label>
             <input id="InputMontoIngreso" type="number" placeholder="Ejemplo: 200">
+            <p class="error" id="errorAddValue"></p>
             <br>
             <button type="button" onclick="onClickButtonPriceDiscount()">
                 Enviar datos
@@ -41,7 +42,13 @@
                 Hacer Calculos
             </button>        
         </form> 
+            
     </section> 
+    <div class="valores" >
+        <h2>Lista de valores cargados</h2>
+        <ul id="mostrarLista"> </ul>
+    </div>
+    
     <div class="div">
         <p id="ResultP"></p>
     </div>
